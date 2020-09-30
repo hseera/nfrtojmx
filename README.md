@@ -37,6 +37,7 @@ The NFR excel file will first be converted to a YAML file which will then be con
 
 * Pass NFR template as a parameter to the conversion script
 * Have a capability down the track to just use a YAML file as an NFR document instead of excel
+* Remove the hardcoded concurrency value and replace it with dynamic value
 ## Authors
 
 * **Harinder Seera** - *Initial work* - [OzPerf](https://ozperf.com/)
