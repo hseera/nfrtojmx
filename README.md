@@ -26,6 +26,10 @@ What things you need to execute the script
 2: Once above prequisites are setup, execute the convert.py python script
 ```
 
+### Output
+Following is a screenshot of what you will get when you run the python script passing the basetemplate excel file.
+![Alt text](/image/Screenshot.png?raw=true "Optional Title")
+
 ## Improvements
 
 * Pass NFR template as a parameter to the conversion script 
