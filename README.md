@@ -1,4 +1,4 @@
-# NFR to JMETER base template
+# API NFR Conversion To JMETER Base Template
 Convert NFR document into a base JMeter template.
 This simple python script takes an API throughput NFR in an excel file and converts into a Jmeter template which can then be enhanced with payload and other information. It is created to reduce the timeframe required to create new scripts.
 
