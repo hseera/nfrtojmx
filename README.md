@@ -28,11 +28,15 @@ What things you need to execute the script
 
 ### Output
 Following is a screenshot of what you will get when you run the python script passing the basetemplate excel file.
+
+The NFR excel file will first be converted to a YAML file which will then be converted to JMX. 
+
 ![Alt text](/image/Screenshot.png?raw=true "Optional Title")
 
 ## Improvements
 
-* Pass NFR template as a parameter to the conversion script 
+* Pass NFR template as a parameter to the conversion script
+* Have a capability down the track to just use a YAML file as an NFR document instead of excel
 ## Authors
 
 * **Harinder Seera** - *Initial work* - [OzPerf](https://ozperf.com/)
