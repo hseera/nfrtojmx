@@ -23,7 +23,7 @@ What things you need to execute the script
 
 ```
 1: Use the baseprofile_template.xlsx to create your NFR requirements. Do not change the xlsx file name. Currently it is hardcoded.
-2: Once above prequisites are setup, execute the convert.py python script
+2: Once above prequisites are setup, execute the convert.py python script. Make sure the basetemplate file is in the same folder as the convert.py script
 ```
 
 ### Output
