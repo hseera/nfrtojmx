@@ -6,7 +6,7 @@ Created on Mon Sep 28 15:37:10 2020
 """
 import yaml
 
-def convertYAML():
+def convert_to_jmx():
     filename = "jmeter.jmx"
     
     stream = open("jmeter.yml","r")
@@ -19,7 +19,7 @@ def convertYAML():
                     testplanName="<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\
                     <jmeterTestPlan version=\"1.2\" properties=\"5.0\" jmeter=\"5.3\">\n\
                       <hashTree>\n\
-                        <TestPlan guiclass=\"TestPlanGui\" testclass=\"TestPlan\" testname=\""+str(v)+"\" enabled=\"true\">\n\
+                        <TestPlan guiclass=\"TestPlanGui\" testclass=\"TestPlan\" testname=\""+ str(v) +"\" enabled=\"true\">\n\
                           <stringProp name=\"TestPlan.comments\"></stringProp>\n\
                           <boolProp name=\"TestPlan.functional_mode\">false</boolProp>\n\
                           <boolProp name=\"TestPlan.tearDown_on_shutdown\">true</boolProp>\n\
@@ -30,7 +30,7 @@ def convertYAML():
                           <stringProp name=\"TestPlan.user_define_classpath\"></stringProp>\n\
                         </TestPlan>\n\
                         <hashTree>\n\
-                        <ThreadGroup guiclass=\"ThreadGroupGui\" testclass=\"ThreadGroup\" testname=\""+str(v)+"\" enabled=\"true\">\n"
+                        <ThreadGroup guiclass=\"ThreadGroupGui\" testclass=\"ThreadGroup\" testname=\""+ str(v) +"\" enabled=\"true\">\n"
                     xmlfile.write(str(testplanName))
                 if k=="TestConcurrency":
                     concurrency="<stringProp name=\"ThreadGroup.on_sample_error\">continue</stringProp>\n\
@@ -38,7 +38,7 @@ def convertYAML():
                                   <boolProp name=\"LoopController.continue_forever\">false</boolProp>\n\
                                   <stringProp name=\"LoopController.loops\">100</stringProp>\n\
                                 </elementProp>\n\
-                                <stringProp name=\"ThreadGroup.num_threads\">"+str(v)+"</stringProp>\n\
+                                <stringProp name=\"ThreadGroup.num_threads\">"+ str(v) +"</stringProp>\n\
                                 <stringProp name=\"ThreadGroup.ramp_time\">10</stringProp>\n\
                                 <boolProp name=\"ThreadGroup.scheduler\">false</boolProp>\n\
                                 <stringProp name=\"ThreadGroup.duration\"></stringProp>\n\
@@ -52,7 +52,7 @@ def convertYAML():
                                   <intProp name=\"calcMode\">0</intProp>\n\
                                   <doubleProp>\n\
                                     <name>throughput</name>\n\
-                                    <value>"+str(v)+"</value>\n\
+                                    <value>"+ str(v) +"</value>\n\
                                     <savedValue>0.0</savedValue>\n\
                                   </doubleProp>\n\
                                 </ConstantThroughputTimer>\n\
@@ -78,18 +78,18 @@ def convertYAML():
                 if k=="Threads":
                     for thread in my_dict['Threads']:
                         for x in enumerate(thread.items()):
-                            thread="<ThroughputController guiclass=\"ThroughputControllerGui\" testclass=\"ThroughputController\" testname=\""+str(x[1][1]['ThreadName'])+" - Throughput Controller\" enabled=\"true\">\n\
+                            thread="<ThroughputController guiclass=\"ThroughputControllerGui\" testclass=\"ThroughputController\" testname=\""+ str(x[1][1]['ThreadName']) +" - Throughput Controller\" enabled=\"true\">\n\
                                   <intProp name=\"ThroughputController.style\">1</intProp>\n\
                                   <boolProp name=\"ThroughputController.perThread\">false</boolProp>\n\
                                   <intProp name=\"ThroughputController.maxThroughput\">1</intProp>\n\
                                   <FloatProperty>\n\
                                     <name>ThroughputController.percentThroughput</name>\n\
-                                    <value>"+str(x[1][1]['Throughput'])+"</value>\n\
+                                    <value>"+ str(x[1][1]['Throughput'])+ "</value>\n\
                                     <savedValue>0.0</savedValue>\n\
                                   </FloatProperty>\n\
                                 </ThroughputController>\n\
                                 <hashTree>\n\
-                                  <HTTPSamplerProxy guiclass=\"HttpTestSampleGui\" testclass=\"HTTPSamplerProxy\" testname=\""+str(x[1][1]['ThreadName'])+"\" enabled=\"true\">\n\
+                                  <HTTPSamplerProxy guiclass=\"HttpTestSampleGui\" testclass=\"HTTPSamplerProxy\" testname=\""+ str(x[1][1]['ThreadName']) +"\" enabled=\"true\">\n\
                                     <elementProp name=\"HTTPsampler.Arguments\" elementType=\"Arguments\" guiclass=\"HTTPArgumentsPanel\" testclass=\"Arguments\" testname=\"User Defined Variables\" enabled=\"true\">\n\
                                       <collectionProp name=\"Arguments.arguments\"/>\n\
                                     </elementProp>\n\
