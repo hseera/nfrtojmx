@@ -11,7 +11,7 @@ def convert_to_yaml(fileName):
     sheet = wb.sheet_by_index(0)
     sheet_names = wb.sheet_names()
     
-    with open('jmeter.yml', 'w') as outfile:
+    with open('result/jmeter.yml', 'w') as outfile:
         outfile.write("---\nName: "+ sheet_names[0] +"\n")
         outfile.write("TestConcurrency: 10\n")
         outfile.write("Threads: \n")

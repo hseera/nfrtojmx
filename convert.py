@@ -10,7 +10,7 @@ from convertYAML import convert_to_jmx
 
 
 def main():
-    convert_to_yaml("BaseProfile-Template.xlsx")
+    convert_to_yaml("result/BaseProfile-Template.xlsx")
     convert_to_jmx()
 
 if __name__ == "__main__":

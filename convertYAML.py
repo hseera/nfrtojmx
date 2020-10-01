@@ -7,9 +7,9 @@ Created on Mon Sep 28 15:37:10 2020
 import yaml
 
 def convert_to_jmx():
-    filename = "jmeter.jmx"
+    filename = "result/jmeter.jmx"
     
-    stream = open("jmeter.yml","r")
+    stream = open("result/jmeter.yml","r")
     my_dicts = yaml.load_all(stream)
     
     with open(filename,"w") as xmlfile:
