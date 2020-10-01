@@ -14,8 +14,8 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to execute the script
 
 ```
-1: You will need to install python YAML package. [Download link](https://pypi.org/project/PyYAML)
-2: You will need to install python xlrd package. [Download link](https://pypi.org/project/xlrd)
+1: You will need to install python YAML package. [Download link](https://files.pythonhosted.org/packages/c8/af/64e32cb1c31dee44235ef39ea5ecbcde5d85f8f1d3b894b9788f53d82cf7/PyYAML-5.3.1-cp27-cp27m-win32.whl)
+2: You will need to install python xlrd package. [Download link](https://files.pythonhosted.org/packages/b0/16/63576a1a001752e34bf8ea62e367997530dc553b689356b9879339cf45a4/xlrd-1.2.0-py2.py3-none-any.whl)
 3: python 3.5
 ```
 
