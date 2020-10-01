@@ -15,7 +15,7 @@ What things you need to execute the script
 
 ```
 1: You will need to install python [YAML](https://pypi.org/project/PyYAML/) package
-2: You will need to install python xlrd package
+2: You will need to install python [xlrd](https://pypi.org/project/xlrd/) package
 3: python 3.5
 ```
 
