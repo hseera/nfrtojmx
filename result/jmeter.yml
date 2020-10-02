@@ -1,1 +1,25 @@
-
+---
+Name: LoadProfile
+TestConcurrency: 10
+Threads: 
+- Thread:
+   ThreadName: API-1
+   Throughput: 65.0
+   Method: PUT
+- Thread:
+   ThreadName: API-2
+   Throughput: 7.0
+   Method: POST
+- Thread:
+   ThreadName: API-3
+   Throughput: 25.0
+   Method: GET
+- Thread:
+   ThreadName: API-4
+   Throughput: 2.0
+   Method: GET
+- Thread:
+   ThreadName: API-5
+   Throughput: 1.0
+   Method: GET
+TestThroughput: 1500.0

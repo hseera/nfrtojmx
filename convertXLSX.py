@@ -10,21 +10,25 @@ def convert_to_yaml(fileName):
     wb = xlrd.open_workbook(fileName)
     sheet = wb.sheet_by_index(0)
     sheet_names = wb.sheet_names()
-    
-    with open('result/jmeter.yml', 'w') as outfile:
-        outfile.write("---\nName: "+ sheet_names[0] +"\n")
-        outfile.write("TestConcurrency: 10\n")
-        outfile.write("Threads: \n")
-        for i in range(sheet.nrows):
-            if (i==(sheet.nrows - 1) or i==0 or i ==1):
-                if (i==(sheet.nrows - 1)):
-                   outfile.write("TestThroughput: "+ str(sheet.cell_value(i,4)) +"\n")
+    try:
+        with open('result/jmeter.yml', 'w') as outfile:
+            outfile.write("---\nName: "+ sheet_names[0] +"\n")
+            outfile.write("TestConcurrency: 10\n")
+            outfile.write("Threads: \n")
+            for i in range(sheet.nrows):
+                if (i==(sheet.nrows - 1) or i==0 or i ==1):
+                    if (i==(sheet.nrows - 1)):
+                       outfile.write("TestThroughput: "+ str(sheet.cell_value(i,4)) +"\n")
+                    else:
+                        print("Ignore the row")
                 else:
-                    print("Ignore the row")
-            else:
-                outfile.write("- Thread:\n")
-                ThreadName="   ThreadName: "+ str(sheet.cell_value(i,0)) +"\n"
-                outfile.write(ThreadName)
-                Throughput="   Throughput: "+ str(sheet.cell_value(i,1)) +"\n"
-                outfile.write(Throughput)
-    outfile.close()
+                    outfile.write("- Thread:\n")
+                    ThreadName="   ThreadName: "+ str(sheet.cell_value(i,0)) +"\n"
+                    outfile.write(ThreadName)
+                    Throughput="   Throughput: "+ str(sheet.cell_value(i,1)) +"\n"
+                    outfile.write(Throughput)
+                    Method="   Method: "+ str(sheet.cell_value(i,5)) +"\n"
+                    outfile.write(Method)
+        outfile.close()
+    except Exception as e:
+        print("exception: {}",e)

@@ -73,6 +73,30 @@ def convert_to_jmx():
                                   <stringProp name=\"HTTPSampler.concurrentPool\">6</stringProp>\n\
                                   <stringProp name=\"HTTPSampler.connect_timeout\"></stringProp>\n\
                                   <stringProp name=\"HTTPSampler.response_timeout\"></stringProp>\n</ConfigTestElement>\n\
+                                <hashTree/>\n\
+                                <CSVDataSet guiclass=\"TestBeanGUI\" testclass=\"CSVDataSet\" testname=\"CSV Data Set Config\" enabled=\"true\">\n\
+                                  <stringProp name=\"delimiter\">,</stringProp>\n\
+                                  <stringProp name=\"fileEncoding\"></stringProp>\n\
+                                  <stringProp name=\"filename\"></stringProp>\n\
+                                  <boolProp name=\"ignoreFirstLine\">false</boolProp>\n\
+                                  <boolProp name=\"quotedData\">false</boolProp>\n\
+                                  <boolProp name=\"recycle\">true</boolProp>\n\
+                                  <stringProp name=\"shareMode\">shareMode.all</stringProp>\n\
+                                  <boolProp name=\"stopThread\">false</boolProp>\n\
+                                  <stringProp name=\"variableNames\"></stringProp>\n\
+                                </CSVDataSet>\n\
+                                <hashTree/>\n\
+                                <CookieManager guiclass=\"CookiePanel\" testclass=\"CookieManager\" testname=\"HTTP Cookie Manager\" enabled=\"true\">\n\
+                                  <collectionProp name=\"CookieManager.cookies\"/>\n\
+                                  <boolProp name=\"CookieManager.clearEachIteration\">false</boolProp>\n\
+                                  <boolProp name=\"CookieManager.controlledByThreadGroup\">false</boolProp>\n\
+                                </CookieManager>\n\
+                                <hashTree/>\n\
+                                <CacheManager guiclass=\"CacheManagerGui\" testclass=\"CacheManager\" testname=\"HTTP Cache Manager\" enabled=\"true\">\n\
+                                  <boolProp name=\"clearEachIteration\">false</boolProp>\n\
+                                  <boolProp name=\"useExpires\">true</boolProp>\n\
+                                  <boolProp name=\"CacheManager.controlledByThread\">false</boolProp>\n\
+                                </CacheManager>\n\
                                 <hashTree/>\n"
                     xmlfile.write(str(TestThroughput))
                 if k=="Threads":
@@ -98,7 +122,7 @@ def convert_to_jmx():
                                     <stringProp name=\"HTTPSampler.protocol\"></stringProp>\n\
                                     <stringProp name=\"HTTPSampler.contentEncoding\"></stringProp>\n\
                                     <stringProp name=\"HTTPSampler.path\"></stringProp>\n\
-                                    <stringProp name=\"HTTPSampler.method\">GET</stringProp>\n\
+                                    <stringProp name=\"HTTPSampler.method\">"+ str(x[1][1]['Method'])+ "</stringProp>\n\
                                     <boolProp name=\"HTTPSampler.follow_redirects\">true</boolProp>\n\
                                     <boolProp name=\"HTTPSampler.auto_redirects\">false</boolProp>\n\
                                     <boolProp name=\"HTTPSampler.use_keepalive\">true</boolProp>\n\
