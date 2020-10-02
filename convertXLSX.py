@@ -29,6 +29,7 @@ def convert_to_yaml(fileName):
                     outfile.write(Throughput)
                     Method="   Method: "+ str(sheet.cell_value(i,5)) +"\n"
                     outfile.write(Method)
-        outfile.close()
     except Exception as e:
         print("exception: {}",e)
+    finally:
+        outfile.close()
