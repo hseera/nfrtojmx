@@ -40,7 +40,7 @@ The NFR excel file will first be converted to a YAML file which will then be con
 * Remove the hardcoded concurrency value and replace it with dynamic value
 ## Authors
 
-* **Harinder Seera** - *Initial work* - [OzPerf](https://ozperf.com/)
+* **Harinder Seera** - *Initial work*
 
 If you would like to contribute to this project, please reachout to me.
 
